@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { useSelector } from "react-redux";
 import { Sidebar } from "./Sidebar";
 import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
 /*
 {
     title: '',
@@ -151,6 +152,7 @@ const todoReducer = (state, { type, payload }) => {
 
 export const TodosCreact = () => {
   const [subtaskvalue, setSubtaskValue] = useState("");
+  const navigate = useNavigate()
    
   //-----taking logedin userId from redux store and make post request
   const {token, name,userId} = useSelector(state=>state.login)
@@ -163,7 +165,7 @@ export const TodosCreact = () => {
   const createNewTask = ()=>{
       const payload = {...state,user_id:userId};
       
-      fetch(`https://todo-application-deep1296.herokuapp.com/todos`, {
+      fetch(`https://updated-todo-application-0181.herokuapp.com/todos`, {
           method: "POST",
           body: JSON.stringify(payload),
             headers: {
@@ -176,9 +178,8 @@ export const TodosCreact = () => {
         .catch(err=>{
             console.log(err)
         })
-
-       
-        
+        alert("Task Created")
+       navigate("/")
        
     } 
     const [state, dispatch] = useReducer(todoReducer, initialState);

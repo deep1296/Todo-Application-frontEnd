@@ -52,7 +52,7 @@ const delete_todo =()=>{
   // })
   // .catch(err=>console.log(err))
 
-  axios.delete(`https://todo-application-deep1296.herokuapp.com/todos/${_id}`)
+  axios.delete(`https://updated-todo-application-0181.herokuapp.com/todos/${_id}`)
   .then(res=>{
     // console.log(res)
     dispatch(getTodosData({userId}))
@@ -105,7 +105,7 @@ const delete_todo =()=>{
                       user_id,
                       _id
                     };
-                    fetch(`https://todo-application-deep1296.herokuapp.com/todos/${_id}`, {
+                    fetch(`https://updated-todo-application-0181.herokuapp.com/todos/${_id}`, {
                       method: "PUT",
                       body: JSON.stringify(payload),
                       headers: {

@@ -25,7 +25,7 @@ export const logout2 = () => ({
 export const signup =(payload)=> (dispatch) => {
     
     dispatch(signuploading())
-    fetch('https://todo-application-deep1296.herokuapp.com/register', {
+    fetch('https://updated-todo-application-0181.herokuapp.com/register', {
         method: 'POST',
         body: JSON.stringify(payload),
         headers: {
